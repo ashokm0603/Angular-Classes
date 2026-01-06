@@ -1,0 +1,26 @@
+[
+  {
+    "id": 100,
+    "name": "Laptop",
+    "price": 500000,
+    "ratings": "⭐⭐⭐⭐",
+    "imageUrl": "",
+    "description": ""
+  },
+  {
+    "id": 100,
+    "name": "Laptop",
+    "price": 500000,
+    "ratings": "⭐⭐⭐⭐",
+    "imageUrl": "",
+    "description": ""
+  },
+  {
+    "id": 100,
+    "name": "Laptop",
+    "price": 500000,
+    "ratings": "⭐⭐⭐⭐",
+    "imageUrl": "",
+    "description": ""
+  }
+]

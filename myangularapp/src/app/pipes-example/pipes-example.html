@@ -1,0 +1,76 @@
+<h1>{{ title | titlecase }}</h1>
+
+<!-- Date Pipe -->
+<h2>Date Pipe</h2>
+<p>Default: {{ today | date }}</p>
+<!-- Aug 31, 2025 -->
+<p>Short: {{ today | date : "short" }}</p>
+<!-- 8/31/25, 9:25 PM -->
+<p>Medium: {{ today | date : "medium" }}</p>
+<!-- Aug 31, 2025, 9:25:30 PM -->
+<p>Long: {{ today | date : "long" }}</p>
+<!-- August 31, 2025 at 9:25:30 PM GMT+5:30 -->
+<p>Full: {{ today | date : "full" }}</p>
+<!-- Sunday, August 31, 2025 at 9:25:30 PM GMT+05:30 -->
+
+<p>Short Date: {{ today | date : "shortDate" }}</p>
+<!-- 8/31/25 -->
+<p>Medium Date: {{ today | date : "mediumDate" }}</p>
+<!-- Aug 31, 2025 -->
+<p>Long Date: {{ today | date : "longDate" }}</p>
+<!-- August 31, 2025 -->
+<p>Full Date: {{ today | date : "fullDate" }}</p>
+<!-- Sunday, August 31, 2025 -->
+
+<p>Short Time: {{ today | date : "shortTime" }}</p>
+<!-- 9:25 PM -->
+<p>Medium Time: {{ today | date : "mediumTime" }}</p>
+<!-- 9:25:30 PM -->
+<p>Long Time: {{ today | date : "longTime" }}</p>
+<!-- 9:25:30 PM GMT+5:30 -->
+<p>Full Time: {{ today | date : "fullTime" }}</p>
+<!-- 9:25:30 PM India Standard Time -->
+
+<p>Custom (dd/MM/yyyy): {{ today | date : "dd/MM/yyyy" }}</p>
+<!-- 31/08/2025 -->
+<p>Custom (yyyy-MM-dd): {{ today | date : "yyyy-MM-dd" }}</p>
+<!-- 2025-08-31 -->
+<p>Custom (EEEE, MMM d, y): {{ today | date : "EEEE, MMMM d, y" }}</p>
+<!-- Sunday, August 31, 2025 -->
+<p>Custom (h:mm a): {{ today | date : "h:mm a" }}</p>
+<!-- 9:25 PM -->
+<p>Custom (HH:mm:ss): {{ today | date : "HH:mm:ss" }}</p>
+<!-- 21:25:30 -->
+
+<!-- Uppercase & Lowercase -->
+<h2>Uppercase & Lowercase</h2>
+<p>{{ message | uppercase }}</p>
+<p>{{ message | lowercase }}</p>
+
+<!-- Currency -->
+<h2>Currency Pipe</h2>
+<p>USD: {{ price | currency : "USD" }}</p>
+<p>INR: {{ price | currency : "INR" : "symbol" }}</p>
+<p>INR: {{ price | currency : "GBP" : "symbol" }}</p>
+<p>INR: {{ price | currency : "EUR" : "symbol" }}</p>
+
+<!-- Percent -->
+<h2>Percent Pipe</h2>
+<p>{{ percentage | percent }}</p>
+
+<!-- Slice -->
+<h2>Slice Pipe</h2>
+<p>{{ message | slice : 0 : 7 }}</p>
+<p>{{ items | slice : 1 : 3 }}</p>
+
+<!-- JSON -->
+<h2>JSON Pipe</h2>
+<pre>{{ student | json }}</pre>
+
+<!-- Chaining Pipes -->
+<h2>Chaining Pipes</h2>
+<p>{{ message | uppercase | slice : 0 : 7 }}</p>
+
+<!-- Custom Pipe -->
+<h2>Custom Reverse Pipe</h2>
+<p>{{ message | reverse }}</p>

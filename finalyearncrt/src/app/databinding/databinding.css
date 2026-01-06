@@ -1,0 +1,12 @@
+h1 {
+  color: palegreen;
+  text-align: center;
+  background-color: palevioletred;
+  border-bottom: 2px solid black;
+}
+h2 {
+  font-weight: bold;
+  text-align: center;
+  color: red;
+  background-image: linear-gradient(pink, powderblue);
+}

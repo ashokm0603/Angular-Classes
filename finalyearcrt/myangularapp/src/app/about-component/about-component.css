@@ -1,0 +1,8 @@
+td {
+  padding: 10px !important;
+}
+#row {
+  background-color: palegreen;
+  font-weight: bold;
+  font-style: italic;
+}

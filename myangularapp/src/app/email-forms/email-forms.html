@@ -1,0 +1,30 @@
+<div class="container">
+  <input [(ngModel)]="name" placeholder="Name" class="form-control mb-2" />
+  <input [(ngModel)]="email" placeholder="Email" class="form-control mb-2" />
+  <input
+    [(ngModel)]="jobTitle"
+    placeholder="Job Title"
+    class="form-control mb-2"
+  />
+  <textarea
+    [(ngModel)]="skills"
+    placeholder="Skills"
+    class="form-control mb-2"
+  ></textarea>
+
+  <button class="btn btn-primary" (click)="sendEmail()">Send Email</button>
+
+  <div *ngIf="emailSent" class="alert alert-success mt-2">
+    Email sent successfully!
+  </div>
+  <div *ngIf="errorMsg" class="alert alert-danger mt-2">{{ errorMsg }}</div>
+
+  <div>
+    <app-email-preview
+      [ngClass]="{ display: isDisplay }"
+      [name]="name"
+      [jobTitle]="jobTitle"
+      [skills]="skills"
+    ></app-email-preview>
+  </div>
+</div>

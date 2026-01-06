@@ -1,0 +1,330 @@
+User define Pipes : 
+-------------------
+    ->Any Pipes which is declared by User or programmer is called as user define 
+    ->We can declared userdefine pipes by implements PipeTransform
+
+
+EmailJS : 
+----------
+    step to integrate emailJs to angular : 
+        step 1: install emailJs library by entering a command 
+                "npm install --save @emailjs/browser"
+        step 2: signUp in EmailJS and create mail service 
+        step 3: create Template 
+        step4 : emailjs.send() 
+                    ->send() predefine inbuilt method emailjs class/module 
+                    -> syntax: 
+                            emailjs.send(
+                                'serviceID',
+                                'TemplateID',
+                                'Params',
+                                'publicKey'
+                            ).then((res)=>{
+                                console.log(res);
+                            }).catch((err)=>{
+                                console.error(err);
+                            })
+
+
+Routes In Angular : 
+-------------------
+    ->Routes are used to navigate from one page to another page based on the URL path 
+    ->Angular by default having router library 
+    ->Types of Routes 
+        1. static routes/basic routes 
+                Ex: http://localhost:4200/home 
+        2. nested routes 
+                Ex: http://localhost:4200/product/edit
+                Ex: http://localhost:4200/user/edit
+                Ex: http://localhost:4200/user/view 
+
+        3. dynamic routes /based on ID 
+                Ex: http://localhost:4200/product:1
+                Ex: http://localhost:4200/product:2
+
+        4. WildCard routes /Redirected routes 
+               {
+                path:"**" , redirect:"/errorpage"
+               }
+
+
+
+
+        Syntax : 
+              const routes:Routes =[
+                {
+                    path:"pathName" ,component:Component
+                },
+                {
+                    path:"pathName" ,component:Component
+                },
+                    {}....
+              ]
+
+              @NgModule({
+                        imports:[RouterModule.forRoot(routes)],
+                        exports:[RouterModule]
+              })
+
+
+              Dynamic Routes : 
+              ----------------
+                ->Dynamic Routes are used to display the component details based on the path with ID 
+                ->syntax : 
+                        const routes:Routes =[
+                            {   path:"product:id" ,component:ProductDetails} ,
+                            {   path:"**" ,redirect:"product/1"} ,
+
+                            ]
+
+                ->If we want to take ID from the url here we need to use ActivatedRoute module
+                    Ex : http://localhost:4200/product/1
+                    Ex : http://localhost:4200/product/2
+
+
+                
+
+                Passing Data from Parent Component to Child Component: 
+                -------------------------------------------------------
+                    ->
+
+                Forms : 
+                --------
+                    ->Forms are used to collect user information digitally 
+                    ->In Angular we have two types of forms 
+                        1. Template Forms 
+                        2. Reactive Forms 
+
+
+1. Template Forms 
+    ->In Template forms all form validation logic present template (html file)
+    ->Here we need to import FormsModule in .ts file 
+    ->ngModel is used to collect input data to the form 
+
+
+    Create new component : 
+        -> ng g c template-form 
+
+ 2. Reactive Forms 
+    ->Reactive forms are used to build advanced form validation 
+    ->Here we need to import ReactiveFormsModule in .ts file 
+    -> 1. formGroup
+       2. formControlName 
+       3. formBuilder
+       4. ngSubmit
+       5. validator
+
+ Reactive Forms with Custom validator : 
+ --------------------------------------
+
+ ShadowDOM: Encapsulation
+ -------------------------
+
+ ViewEncapsulation.None-> applied stylings Global
+ ViewEncapsulation.ShadowDOM-> applied stylings Local
+
+
+ class Demo{
+  private  int a=10;
+
+  public int getA(){
+    return a;
+  }
+ }
+
+
+ class Test{
+    public static void main(String[] args){
+        System.out.println(new Demo().getA());
+    }
+ }
+
+
+
+
+Dependency injection  thought Service providers: 
+-------------------------------------------------
+HTTP Client : 
+---------------
+
+MongoDB: 
+-------
+    -> MongoDB is the database where we can store data in the form BSON( binary script object notation )
+    ->In MongoDB data store in document Formate 
+
+
+Database: 
+---------
+    ->Database is the place where we can store data and maintain data 
+    ->Database is the group of collections in MongoDB
+    ->to create database / switch(change) database : 
+            use databaseName 
+
+
+            Ex: use AIMLDS
+
+
+Installation : 
+----------------
+        1. MongoDB Compass ->present in locally
+        2. MongoDB Atlas    ->present cloud (browser)
+
+
+Collections : 
+-------------
+    ->Collections are the group of documents in MongoDB
+    ->To create new Collection : 
+            db.createCollection("collectionName)
+
+            ex: db.createCollection("studentDetails")
+
+CRUD Operations in MongoDB: 
+----------------------------
+        insert : 
+        ------- 
+            ->insert is used to create document in collection 
+            ->here we have two method to insert documents : 
+                    1. insertOne() 
+                        ->insertOne() is used to create / insert single document at a time 
+                        ->syntax: 
+                            db.collectionName.insertOne({})
+
+                            Ex: 
+                                db.studentDetails.insertOne(
+                                        {
+                                            name:"ravi",
+                                            course:"java full stack" ,
+                                            fees:50000,
+                                            email:"ravi@gmail.com",
+                                            skills:["java" , " react" , "spring boot"]
+                                        }
+                                    )
+
+                    2. insertMany() 
+                        ->insertMany() is used to create / insert multiple documents at a time 
+                        ->Syntax : 
+                                db.collectionName.insertMany([{},{},{},{}])
+
+                        Ex:     
+                            db.studentDetails.insertMany(
+                                [
+                                    {
+                                        name:"ramu",
+                                        fees:90000,
+                                        course:"python full stack"
+                                    },
+                                    {
+                                        name:"Rani",
+                                        fees:70000,
+                                        course:"MERN full stack"
+                                    },
+                                    {
+                                        name:"Raju",
+                                        fees:75000,
+                                        course:"MEAN full stack"
+                                    },
+
+                                ]
+                            )
+            
+            
+            2. find : 
+                -> find use to retrieve / read the document in collection
+                ->Here we have 2 methods : 
+                    1. find() 
+                        ->find() use to retrieve / read the all documents in collection
+                        syntax: 
+                            db.collectionName.find()
+
+                    2. findOne() 
+                        ->findOne() use to retrieve / read only one document in collection
+                        syntax: 
+                            db.collectionName.findOne()
+
+
+                i. Filter condition in find : 
+                -----------------------------
+                syntax: 
+                  1. db.collectionName.find({filter condition})
+                  2. db.collectionName.findOne({filter condition})
+
+
+                ii. projection in find : 
+                ------------------------
+                ->projections is used to display required field's present document
+                ->To display field's pass value 1/ true 
+                ->To not  display field's pass value 0/ false
+
+                syntax: 
+                  1. db.collectionName.find({filter condition}, {projection})
+                  2. db.collectionName.findOne({filter condition},{projection})
+
+
+
+            
+
+1. WAQT create employeeManagementSystem database 
+2. WAQT create emp collection
+3. WAQT insert min 5 employee[name, salary , role , address, age, experience] documents in emp collection 
+4. WAQT display only empName , empSalary  who's role "full stack developer"
+
+
+    3. Drop  : 
+        ->Drop is used to delete or drop database or collection 
+        ->To delete / drop collection 
+            db.collectionName.drop() 
+        
+        ->To delete / drop database 
+            db.dropDataBase() 
+
+
+    4. delete : 
+    -------------
+        ->delete is used to delete documents in collection.
+        ->here we have two Methods :
+            1.deleteOne(): 
+                syntax: 
+                    db.collectionName.deleteOne({filterCondition})
+
+
+            2. deleteMany()
+                syntax: 
+                    db.collectionName.deleteMany({filterCondition})
+
+
+    4. Update: 
+    ----------
+        ->Update is used to Update fields 
+        ->To achieve Update here we need to use $set operator 
+        ->here we have two methods : 
+            1. updateOne():
+                Syntax: 
+                    db.collectionName.updateOne({filter Condition},{updated Values})
+            2. updateMany(): 
+                Syntax: 
+                    db.collectionName.updateMany({filter Condition},{updated Values})
+
+DataTypes in MongoDB: 
+--------------------
+    1.number 
+    2.String
+    3.null 
+    4.array 
+    5.object 
+    6.function 
+    7._id   (primary key) 
+    8. time 
+    9.boolean 
+
+
+Functions In MongoDB : 
+---------------------
+    1. Skip() 
+    2. limit() 
+    3. count() 
+
+
+
+
+
+

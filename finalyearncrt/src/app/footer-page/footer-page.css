@@ -1,0 +1,13 @@
+ol {
+  height: 90px;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: palevioletred;
+  align-items: center;
+  list-style: none;
+}
+li {
+  background-color: aqua;
+  padding: 10px 30px;
+  border-radius: 10px;
+}

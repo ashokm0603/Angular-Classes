@@ -1,0 +1,22 @@
+<h1>This is Data Binding Component</h1>
+
+<label for="">Student Name :</label>
+<input type="text" [(ngModel)]="studentName" placeholder="Enter Your Name" />
+<br /><br />
+<label for="">Student RollNo :</label>
+<input type="text" [(ngModel)]="studentRoll" placeholder="Enter Your Name" />
+<br /><br />
+<label for="">Student Course :</label>
+<input type="text" [(ngModel)]="studentCourse" placeholder="Enter Your Name" />
+<br /><br />
+<label for="">Student Age :</label>
+<input type="text" [(ngModel)]="studentAge" placeholder="Enter Your Name" />
+<br /><br />
+
+
+
+<h2>Student Details :</h2>
+<p>Name: {{ studentName }}</p>
+<p>Age: {{ studentAge }}</p>
+<p>Course: {{ studentCourse }}</p>
+<p>RollNumber: {{ studentRoll }}</p>

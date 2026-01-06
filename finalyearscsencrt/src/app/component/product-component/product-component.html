@@ -1,0 +1,25 @@
+<h1 class="bg-success text-center p-3">Product Details</h1>
+<div class="row m-5">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Product Name</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of productData">
+        <td>
+          {{ product.productId }}
+        </td>
+        <td>
+          {{ product.name }}
+        </td>
+        <td>
+          {{ product.price }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

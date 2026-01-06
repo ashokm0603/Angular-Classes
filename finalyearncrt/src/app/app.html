@@ -1,0 +1,72 @@
+<!-- <h1 class="text-center bg-success p-4">Welcome to Bootstrap</h1>
+
+<div class="row m-5">
+  <table class="table">
+    <thead>
+      <tr>
+        <th class="bg-info">Name</th>
+        <th class="bg-info">Role</th>
+        <th class="bg-info">Salary</th>
+        <th class="bg-info">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emp of empDetails">
+        <ng-container *ngIf="emp.salary < 80000">
+          <td class="bg-danger-subtle">{{ emp.name }}</td>
+          <td class="bg-danger-subtle">{{ emp.role }}</td>
+          <td class="bg-danger-subtle">{{ emp.salary }}</td>
+          <td class="bg-danger-subtle">
+            <div class="btn btn-outline-warning mx-2">Edit</div>
+            <div class="btn btn-danger mx-2">Delete</div>
+          </td>
+        </ng-container>
+        <ng-container *ngIf="emp.salary >= 80000">
+          <td>{{ emp.name }}</td>
+          <td>{{ emp.role }}</td>
+          <td>{{ emp.salary }}</td>
+          <td>
+            <div class="btn btn-outline-warning mx-2">Edit</div>
+            <div class="btn btn-danger mx-2">Delete</div>
+          </td>
+        </ng-container>
+      </tr>
+    </tbody>
+  </table>
+</div> -->
+<!-- 
+<h1 class="bg-success-subtle text-center p-2">ng Switch</h1>
+
+<div class="row m-5">
+  <div class="col">
+    <label for="">Select Color: </label>
+  </div>
+  <div class="col-10">
+    <select [(ngModel)]="colors" style="width: 200px" (change)="getColors()">
+      <option value="Red">Red</option>
+      <option value="Green">Green</option>
+      <option value="yellow">yellow</option>
+      <option value="blue">blue</option>
+      <option value="skyblue">skyblue</option>
+    </select>
+  </div>
+</div>
+
+<div class="row m-5" [ngSwitch]="colors">
+  <div class="btn btn-danger" *ngSwitchCase="'Red'">Selected Red</div>
+  <div class="btn btn-primary" *ngSwitchCase="'blue'">Selected Blue</div>
+  <div class="btn btn-warning" *ngSwitchCase="'yellow'">Selected Yellow</div>
+  <div class="btn btn-info" *ngSwitchCase="'skyblue'">Selected SkyBlue</div>
+  <div class="btn btn-success" *ngSwitchCase="'Green'">Selected Green</div>
+  <div *ngSwitchDefault>Default Statement , Select Any Color</div>
+</div>
+
+<div>
+  @for(val of arr;track val){
+  <h1>
+    {{ val }}
+  </h1>
+  }
+</div> -->
+
+<app-structural-directive-if-else></app-structural-directive-if-else>

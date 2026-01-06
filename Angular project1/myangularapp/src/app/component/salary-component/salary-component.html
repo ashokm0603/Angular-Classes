@@ -1,0 +1,28 @@
+<h1 class="text-center bg-success p-3">Employee Salary Details</h1>
+
+<div class="row m-5">
+  <table>
+    <thead>
+      <tr>
+        <th>EmpId</th>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Salary</th>
+        <th>Bonus</th>
+        <th>Total Salary(salary+bonus)</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (emp of salaryData; track emp) {
+      <tr>
+        <td>{{ emp.empId }}</td>
+        <td>{{ emp.name }}</td>
+        <td>📱{{ emp.phone | phonenumber }}</td>
+        <td>{{ emp.salary | currency : "INR" }}</td>
+        <td>{{ emp.bonus | currency : "INR" }}</td>
+        <td>{{ emp.bonus + emp.salary | currency : "INR" }}</td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>

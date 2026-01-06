@@ -1,0 +1,111 @@
+<div class="container">
+  <div class="row">
+    <h1 class="text-center bg-info">Login Form</h1>
+  </div>
+  <div class="row">
+    <div class="col">
+      <label for=""><strong> UserName : </strong></label>
+    </div>
+    <div class="col-10">
+      <input type="text" placeholder="Enter your name" [(ngModel)]="username" />
+    </div>
+  </div>
+
+  <div class="row my-2">
+    <div class="col">
+      <label for="">
+        <strong> Password : </strong>
+      </label>
+    </div>
+    <div class="col-10">
+      <input
+        type="password"
+        placeholder="Enter password"
+        [(ngModel)]="password"
+      />
+    </div>
+  </div>
+  <div class="row m-5">
+    <div class="btn btn-primary my-2" (click)="submitForm()">Submit</div>
+    <div class="btn btn-warning" (click)="resetForm()">Reset</div>
+  </div>
+</div>
+
+@if(isVisibleAlertMessage){ @if(username=='admin'&&password=='admin@123'){
+<div class="alert alert-success mx-5">User Login Successfully...</div>
+} @else {
+<div class="alert alert-danger mx-5">Invalid Credentials...</div>
+} }
+
+
+
+
+
+
+
+
+<div class="container">
+  <div class="row">
+    <h1 class="text-center bg-success p-3">Emp Details</h1>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <input
+        type="number"
+        [(ngModel)]="filteredSalary"
+        placeholder="Enter salary range to flitter"
+      />
+    </div>
+    <div class="col-10">
+      <div class="btn btn-info" (click)="applyFlitterTable()">Apply Filter</div>
+    </div>
+  </div>
+  <div class="row">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Role</th>
+          <th>Salary</th>
+          <th>Address</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for( emp of empDetails;track emp){ @if(displayTable){ 
+            @if(filteredSalary>=emp.salary){
+        <tr>
+          <td>
+            {{ emp.name }}
+          </td>
+          <td>
+            {{ emp.role }}
+          </td>
+          <td>{{ emp.salary }}</td>
+          <td>{{ emp.address }}</td>
+          <td>
+            <div class="btn btn-warning mx-2">Edit</div>
+            <div class="btn btn-danger mx-2">Delete</div>
+          </td>
+        </tr>
+        }}@else {
+        <tr>
+          <td>
+            {{ emp.name }}
+          </td>
+          <td>
+            {{ emp.role }}
+          </td>
+          <td>{{ emp.salary }}</td>
+          <td>{{ emp.address }}</td>
+          <td>
+            <div class="btn btn-warning mx-2">Edit</div>
+            <div class="btn btn-danger mx-2">Delete</div>
+          </td>
+        </tr>
+        } }
+      </tbody>
+    </table>
+  </div>
+</div>

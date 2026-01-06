@@ -1,0 +1,487 @@
+App.ts : 
+----------
+    1.selector -> selector are used to render html page to another component
+    2.template -> this contains all html marked language that will will render to browser 
+    3.templateUrls ->
+
+
+Command to create new Component : 
+    -> ng generate component componentName
+
+
+Angular Data binding: 
+----------------------
+    -> Angular will support 2 types of Data binding
+        1. one way data binding 
+        2. two way data binding
+    -> Data binding is the flow of data ,  model to view or view to model 
+
+    1. one way binding
+        ->Flow of data form model to view 
+        ->here we not receive data from view to model
+        ->this also called as a unidirectional data flow 
+        ->EX: HomeComponent 
+                i.home.html 
+                ii.home.ts 
+                
+            AppComponent 
+                i.app.html 
+                ii.app.ts 
+
+29-07-2025 : 
+--------------
+  -> ng g c product-details
+  -> install bootstrap using CLI way by giving command npm install bootstrap
+  ->configure to angular.json in styles:  "./node_modules/bootstrap/dist/css/bootstrap.min.css"
+  ->design cards contains product image , name , about , button with 4* 9 grids 
+  
+
+  ->Declare all product details in array in component .ts 
+  ->By using Structural directive (ngFor) display all product details in html page 
+
+  
+
+  Structural Directives : 
+  -----------------------
+    1.ngFor 
+    2.ngIf 
+    3.ngSwitch -> @angular/common 
+        i.ngSwitchCase 
+        ii. ngSwitchDefault
+
+    conditional statement 
+        based on the input particular case get match , if non of cases will matched means default statement 
+
+[name , year , session , course , fee, SGPA, Attadence(%)] , Ex: if the user select 1st Year then we need to only 1st year student details ..
+
+
+
+
+
+
+Structural Directives : 
+------------------------
+    1. *ngFor 
+    2. *ngIf 
+    3. *ngSwitch 
+    4. *ngSwitchCase
+    5. *ngSwitchDefault
+
+angular version 17+ : 
+----------------------
+1. @for () : 
+--------------
+        ->@for directive acts like a for-of loop used to iterate array 
+        ->@for will accept 2 expressions    
+            1. for-of loop condition 
+            2. track variable
+
+        ->syntax : 
+                @for(variableName of array ; track variableName){
+
+                }
+
+            2. @if()  and @else(): 
+            ---------------------
+                ->This is directives is used to display the structure of the web page based on the condition 
+                ->If the condition will become a true then only @if() block will get execute or if the condition is false we will get @else block  
+
+                ->@if() will accept expression(condition)
+
+
+
+
+
+
+
+
+2. @if()
+3. @else() 
+4. @switch() 
+5. @case () 
+6. @default 
+
+
+
+Pipes In Angular: 
+------------------
+        ->Pipes are used to transfer data in template without changing original data in class 
+        ->Pipes of Types : 
+        ------------------
+            1. Predefine Pipes :this inbuilt pipes present Angular in @angular/common library
+
+                Ex: 1. UpperCasePipe
+                    2. LowerCasePipe 
+                    3. CurrencyPipe 
+                            symbol : 
+                                1. INR ->Rupee symbol
+                                2. USD ->Dollar symbol
+                                3. EUR ->Euros 
+                    4. PercentagePipe 
+                    5. DatePipe 
+                            symbol: 
+                                1. full 
+                                2. medium 
+                                3. short
+                                4. dd -->date 
+                                5. M -->month 
+                                6. yyyy -->year 
+                                7. hh -->hours in 1 - 12 formate 
+                                8. HH -->hours in 1- 24 formate
+                                9. mm -->minutes 
+                                10. ss -->seconds 
+                                11. a- > Am/ Pm
+
+
+
+
+                    6. SlicePipe  : 
+                        ->We can apply for String and array dataTypes
+
+
+                    7. JsonPipe
+                        ->if we want to display object data in json formate on web page we need to JsonPipe
+
+
+            2. UserDefine Pipes 
+                ->Any Pipes Which Declared by User or Programmer That pipes we called UserDefine Pipes
+                ->if we want achieve UserDefine we need to import PipeTransform interface
+                ->'PipeTransform' is the predefine functional interface contains transform() 
+
+
+
+
+
+
+            interface PipeTransform{
+                    transform():any ;
+            }
+
+
+
+
+
+
+
+              interface  home{
+                        void display();
+                }
+
+
+
+            .Java:
+            ---------
+
+                class demo{
+
+                            int a=10;
+                           boolean b=true;
+                }
+
+            .ts: 
+            --------
+                class demo{
+
+                             a:number=10;
+                            b:boolean=true;
+                }
+
+
+
+
+Routes : 
+---------
+    ->Routes are used to navigate from one page  another page 
+    ->Angular will contains built Routes 
+
+
+
+    syntax : 
+        routes:Routes=[
+            {
+                path:"pathName1",component:ComponentName1,
+            },
+            {
+                path:"pathName2",component:ComponentName2,
+            }, .....etc 
+        ]
+
+
+        @NgModule({
+            imports:[RouterModule.forRoot(routerVariableName)],
+            exports:RouterModule()
+        })
+        export class ClassName{
+
+        }
+
+
+        1. First we need components 
+
+        http://localhost:4200/login
+
+
+        2. NestedRoutes : 
+        ------------------
+            syntax:
+            app.routes.ts : 
+                const routes:Routes =[
+                    {
+                        path:"parentPath" ,component:ParentComponent ,children:[
+                            {path:"childpath" , component :ChildComponent}
+                        ]
+                    }
+                ]
+
+                Url: http://localhost:4200/parentPath/childpath
+                Url: http://localhost:4200/profile/edit
+                Url: http://localhost:4200/profile/view
+                Url: http://localhost:4200/profile/delete
+
+
+            WildCard Routes : 
+            ------------------
+                ->this type of routes are used to display the componentPage when  user enter wrong urlPath 
+
+                syntax : 
+                const routes :Routes =[
+                    {path:"pagenotfound" ,component:PageNotFound},
+                    {path:"**" , redirect:"/pagenotfound"}
+                ]
+
+
+                Dynamic Routes : 
+                ----------------
+
+
+Reactive Forms : 
+----------------
+    ->ReactiveFormsModule in .ts 
+        1. ngSubmit  -> forms submit event (ngSubmit)
+        2. formGroup -> property binding [formGroup] 
+        3. formControlName-> attribute 
+        4. FormBuilder   ->predefine inbuilt component . ts 
+
+        ->First u need to create component 
+            ng g c student-registration
+
+Dependency Injection thought service Providers : MVC  /MVVC
+------------------------------------------------   
+    api data/userDefine data
+        |
+    Service layer -> service provider @injectable() 
+        | 
+    control layer   ->. ts 
+        |
+    presentation layer ->. html
+
+
+To Create New Service : 
+-------------------------
+     ng g service service-name 
+     ng generate service service-name 
+
+     
+To Create New Component : 
+-------------------------
+     ng g component component-name 
+     ng g c component-name 
+     ng generate component component-name 
+
+
+
+HTTPClient: 
+-----------
+    ->HTTPClient module is used to handle HTTP Requests
+        1.get()
+        2.post()
+        3.put() 
+        4.delete() 
+
+
+MongoDB: 
+--------
+
+->MongoDB is the one of nosql because in MongoDB data in the form of BSON(binary Script Object Notation ) document
+
+    i. database : 
+    -------------
+    
+    ii.collection : 
+    ----------------
+
+{
+
+    "key": value,
+    "key1":value1,....
+}
+
+{
+    slno:100,
+    name:"ravi",
+    role:"developer" ,
+    salary:50000,
+}
+
+sql: 
+------------------------------------
+|slno  | name   |role    |  salary |
+------------------------------------
+|100   |ravi    |developer| 100000 |
+------------------------------------
+
+
+create table  student(StId int primarykey ,name varchar(10) notNull , email varchar(25) unique )
+
+
+
+MongoDB Atlas : ->Cloud based
+MongoDB Compass: -> Present in locally
+
+DataBase: 
+---------
+    ->DataBase is  place where we can store data and maintain the data 
+    ->DataBase group of Collection in Mongodb 
+    ->To create DataBase /change database : 
+            use databaseName
+    ->To display all DataBase 
+            show databases 
+
+Collection: 
+-----------
+    ->Collection is the group of Documents 
+    ->To create New Collection : 
+        db.createCollection("collectionName")
+    ->To display all Collections  
+            show Collections
+
+
+CRUD Operations In MongoDB : 
+-----------------------------
+    1. insert : 
+            -> Insert is used to insert data into a collection 
+            ->Here we have two method to insert data : 
+                1. insertOne()
+                    syntax: 
+                        db.collectionName.insertOne({})
+
+                2. insertMany() 
+                    syntax: 
+                        db.collectionName.insertMany([{} ,{} ,{}])
+
+
+
+    2. find: 
+        -> find is used to fetch or read documents 
+        ->Here we have two method to fetch data : 
+            1. find() 
+                ->find() used to retrieve all documents present collection 
+                syntax: 
+                    db.collectionName.find() 
+
+            2. findOne() 
+                ->findOne() used to retrieve only one document 
+                syntax: 
+                    db.collectionName.findOne() 
+
+            i. Filtering Data : 
+            syntax: 
+                db.collectionName.find(filterCondition)
+
+            ex 1:  db.cse_ncrt.find({name:"ravi"})
+            ex 2:  db.cse_ncrt.findOne({fees:{$gt:50000}})
+
+            ii. Projections:
+                ->used to display required fields in document 
+                ->to display the fields make value true/ 1 , if doesn't display fields make value false /0 
+                syntax : 
+                    db.collectionName.find(filterCondition , projects )
+
+        3.Delete :
+            ->Delete is to delete the documents in collection
+            ->Here we have two method to delete document :
+                1. deleteOne() 
+                    ->Used to Delete one Matched document in collection
+                    syntax: 
+                        db.collectionName.deleteOne(filterCondition) 
+
+                    Ex: db.cse_ncrt.deleteOne({name:"ramu"})
+
+                2. deleteMany()  
+                    ->Used to Delete Many Matched documents in collection
+                    syntax: 
+                        db.collectionName.deleteMany(filterCondition) 
+                    
+                    Ex: db.cse_ncrt.deleteMany({name:"ramu"}) 
+
+
+            4. Update : 
+            ------------
+            ->Update is used insert new fields or update values to the document
+            ->here we have two methods 
+                1. updateOne()
+                    ->updateOne() is used to modify only on document at a time
+                    ->syntax: 
+                        db.collectionName.updateOne({filter condition},{$set fields}) 
+
+
+
+                2. updateMany() : 
+                    ->updateMany() is used to modify all matched  documents at a time
+                    ->syntax: 
+
+                        db.collectionName.updateMany({filter condition},{$set fields}) 
+
+                
+
+1. WAQT update salary 90000 who's working as a 'front end developer'
+2. WAQT update diwali bonus for every employees 5000 to there salary 
+    $inc 
+
+
+
+
+Drop : 
+------
+    ->Drop is used to drop/delete database/collection/indexes
+    ->To Drop Collection : 
+        syntax: 
+            db.collectionName.drop() 
+
+    ->To Drop Database : 
+        syntax: 
+            db.dropDatabase()
+
+    
+
+
+    Data Types In MongoDB : 
+    -----------------------
+        1. number 
+        2. string 
+        3. array 
+        4. object 
+        5. date 
+        6. time 
+        7. boolean 
+        8. null
+        9. function 
+
+
+Functions in MongoDB :  find() , findOne() 
+----------------------
+    1. limit() 
+    2. skip() 
+    3. sort() 
+        1. WAQT display highest aged student Details 
+
+
+    4. size() 
+    5. min() 
+    6. max() 
+
+
+
+MongoDB Atlas: 
+--------------
+

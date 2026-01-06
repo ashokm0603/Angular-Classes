@@ -1,0 +1,45 @@
+<div>
+  <label for="">Name : </label>
+  <input type="text" [(ngModel)]="name" placeholder="Enter Your name" />
+  <br /><br />
+  <label for="">College Name : </label>
+  <input
+    type="text"
+    [(ngModel)]="college"
+    placeholder="Enter college name"
+  /><br />
+  <br />
+  <label for="">Year :</label>
+  <input type="text" [(ngModel)]="year" placeholder="Enter year" />
+  <br /><br />
+  <label for="">Subject :</label>
+  <input type="text" [(ngModel)]="subject" placeholder="Enter your subject" />
+  <br /><br />
+  <label for="">Address :</label>
+  <input type="text" [(ngModel)]="address" placeholder="Enter your Address" />
+  <br /><br />
+  <button (click)="displayDiv()">Click here</button>
+</div>
+<h1>Student Details</h1>
+<div [ngClass]="{ studentDetails: isActive }">
+  <table border="1" [cellPadding]="10" cellspacing="0">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>College</th>
+        <th>Year</th>
+        <th>Subject</th>
+        <th>Address</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ name }}</td>
+        <td>{{ college }}</td>
+        <td>{{ year }}</td>
+        <td>{{ subject }}</td>
+        <td>{{ address }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,10 @@
+.studentDetails {
+  display: none;
+  background-color: red;
+  font-weight: bold;
+}
+p {
+  background-color: aqua;
+  color: brown;
+  font-weight: bold;
+}

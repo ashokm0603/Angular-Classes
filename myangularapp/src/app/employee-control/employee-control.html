@@ -1,0 +1,158 @@
+<!-- <app-employee-model></app-employee-model> -->
+<div class="row m-5">
+  <div class="col-8">
+    <div class="card">
+      <div class="card-header bg-success">
+        <h4>Employee List</h4>
+      </div>
+      <div class="card-body">
+        <div class="col-12">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Sr NO</th>
+                <th>Name</th>
+                <th>Contact Me</th>
+                <th>Email Id</th>
+                <th class="text-center">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              @for(item of employeeList;track $index){
+              <tr>
+                <td>{{ $index + 1 }}</td>
+                <td>{{ item.name }}</td>
+                <td>{{ item.contactNo }}</td>
+                <td>{{ item.emailId }}</td>
+                <td class="text-center">
+                  <button class="btn btn-primary" (click)="onEdit(item)">
+                    Edit
+                  </button>
+                  <button
+                    class="btn btn-danger mx-2"
+                    (click)="onDelete(item.empId)"
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="card">
+      <div class="card-header bg-success">
+        <h4>New Employee</h4>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="employeeForm">
+          <div class="row">
+            <div class="col-6">
+              <label for="">Name </label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Enter Name"
+                formControlName="name"
+              />
+              <div class="text-danger">
+                @if(employeeForm.controls['name'].touched){
+                @if(employeeForm.controls['name'].errors?.['required']){
+                <span>Name is Required</span>
+                } }
+              </div>
+            </div>
+            <div class="col-6">
+              <label for="">Email-ID </label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Email address"
+                formControlName="emailId"
+              />
+            </div>
+            <div class="col-6">
+              <label for="">Contact No </label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="contactNo"
+                placeholder="+91"
+              />
+            </div>
+            <div class="col-6">
+              <label for="">City </label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="city"
+                placeholder="City"
+              />
+            </div>
+            <div class="col-6">
+              <label for="">State </label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="state"
+                placeholder="State"
+              />
+            </div>
+            <div class="col-6">
+              <label for="">PinCode </label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="pinCode"
+                placeholder="PinCode"
+              />
+
+              <div class="text-danger">
+                @if(employeeForm.controls['pinCode'].touched){
+                @if(employeeForm.controls['pinCode'].errors?.['required']){
+                <span>pinCode is Required</span>
+                } }
+              </div>
+            </div>
+            <div class="col-6">
+              <label for="">Address </label>
+              <textarea
+                name=""
+                class="form-control"
+                id=""
+                formControlName="address"
+                placeholder="Address"
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="row pt-2">
+            <div class="col-6 text-center">
+              <button type="reset" class="btn btn-secondary">Reset</button>
+            </div>
+
+            <div class="col-6 text-center">
+              @if(employeeForm.controls["empId"].value=='1'){
+              <button type="submit" (click)="onSave()" class="btn btn-success">
+                Save Employee
+              </button>
+              }@else {
+              <button
+                type="submit"
+                (click)="onUpdate()"
+                class="btn btn-warning"
+              >
+                Update Employee
+              </button>
+              }
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

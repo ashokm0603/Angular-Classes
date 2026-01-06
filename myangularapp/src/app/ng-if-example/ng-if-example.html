@@ -1,0 +1,14 @@
+<div class="row m-5 p-5">
+  <div class="card p-5">
+    <div class="card-title">Image 1</div>
+    <div class="card-text">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae accusantium
+      vel veritatis reiciendis ratione itaque sunt? Deleniti iure hic in esse
+      recusandae, magnam distinctio fugiat illum? Deserunt, ea porro. Possimus.
+    </div>
+    <div class="btn btn-primary" (click)="display()">{{ btnText }} More</div>
+    @if(!isVisible){
+    <img height="250" width="200" [src]="url" alt="" />
+    }
+  </div>
+</div>

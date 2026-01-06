@@ -1,0 +1,27 @@
+nav {
+  padding: 10px 8px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-image: linear-gradient(pink, powderblue);
+}
+img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+ol {
+  width: 80%;
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+}
+li {
+  background-color: pink;
+  padding: 7px 30px;
+  font-weight: bold;
+  font-style: italic;
+  font-family: monospace;
+  box-shadow: 5px 5px 5px black;
+  border-radius: 10px;
+}

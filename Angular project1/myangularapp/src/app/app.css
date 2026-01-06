@@ -1,0 +1,22 @@
+nav {
+  background-color: palegoldenrod;
+}
+ol {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 90px;
+  list-style-type: none;
+}
+li {
+  background-color: cadetblue;
+  font-size: 25px;
+  padding: 10px 30px;
+  border-radius: 5px;
+}
+a {
+  font-weight: bold;
+  font-style: italic;
+  color: aliceblue;
+  text-decoration: none;
+}

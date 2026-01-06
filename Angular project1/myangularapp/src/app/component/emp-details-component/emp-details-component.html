@@ -1,0 +1,35 @@
+<h1 class="text-center p-3 bg-success">Employee Basic Details</h1>
+<div class="row m-5">
+  <div class="row">
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="bg-danger-subtle">EMP ID</th>
+          <th class="bg-danger-subtle">Name</th>
+          <th class="bg-danger-subtle">Email</th>
+          <th class="bg-danger-subtle">Phone</th>
+          <th class="bg-danger-subtle">Role</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (emp of empData; track emp) {
+        <tr>
+          <td>{{ emp.empId }}</td>
+          <td>
+            {{ emp.name }}
+          </td>
+          <td>
+            {{ emp.email }}
+          </td>
+          <td>
+            {{ emp.phone }}
+          </td>
+          <td>
+            {{ emp.role }}
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,112 @@
+Event Binding : 
+-----------------
+    ->event binding is used to build declarative DOM (document object model) 
+
+    i. click 
+    ii . mouseover
+
+
+    ngIf 
+
+
+
+
+import { CommonModule } from '@angular/common';
+@Component({
+  ....
+  imports: [CommonModule],
+  .....
+  .....
+})
+export class App {
+  age = 25;
+}
+
+
+Bootstrap : 
+-----------
+    ->Bootstrap is the front-end framework used to design UI(user interface)
+    ->Bootstrap contains predefine HTML , CSS , JS code libraries 
+    ->We can integrate Bootstrap in 2 ways
+        i. CDN (content delivery network)
+            ->style link 
+            ->JS link 
+        ii.CLI (Command line interface)
+                ->npm install bootstrap 
+                ->npm i bootstrap 
+
+        
+Integrate  bootstrap to Angular : 
+----------------------------------
+    step 1: install bootstrap using cli way 
+                npm i bootstrap
+    step 2: 
+            Integrate bootstrap stylings in angular.json ( 
+                styles : [ './node_modules/bootstrap/dist/css/bootstrap.min.css']
+                
+                )
+            
+
+
+3. ngSwitch : 
+-------------
+
+switch(2){
+    case 1: statements
+    break ;
+    
+    case 2: statements
+    break ;
+
+    case 3: statements
+    break ;
+
+    default:{
+        
+    }
+
+}
+
+
+
+[ngSwitch]='10'
+
+    *ngSwitchCase='1'
+    *ngSwitchCase='2'
+    *ngSwitchCase='3'
+    *ngSwitchCase='4'
+    *ngSwitchDefault
+
+
+    @angular/common library 
+
+
+
+Structural Directive : 
+------------------------
+    1. ngFor
+    2. ngIf
+    3. ngSwitch 
+    4. ngSwitchCase 
+    5. ngSwitchDefault
+
+    6. @for()               | 
+    7. @if()                |
+    8. @else                |   ---> Angular 17+
+    9. @switch()            |
+    10.@case()             |
+    11.@default            |
+
+
+@if and @else : 
+------------------
+    ->@if() block will get execute , if the condition is false then will get @else block 
+
+
+Syntax: 
+---------
+    @if(expression){
+
+    }@else{
+
+    }

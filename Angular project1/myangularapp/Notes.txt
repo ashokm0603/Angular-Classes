@@ -1,0 +1,380 @@
+Bootstrap : 
+-----------
+
+
+Email JS : 
+-----------
+
+        npm install --save @emailjs/browser
+
+
+Create a component with the display-emp-details in the table format , declare emp-details in Array having 'SlNo', 'Name' ,'Salary','Role','Address', 'Action'
+
+
+
+
+@for()  loop : 
+        -> ngFor or for-of loop
+        ->@for directive present in CommonModule 
+        ->Here non-need to import CommonModule by default angular will import CommonModule 
+        ->@for will take two expressions 
+                1. for-of loop condition
+                2. trace(track) the variable
+
+        2. @if and @else 
+                ->Conditional  statements 
+        
+        @if will accept expression(condition)
+
+
+Pipes In Angular : 
+-------------------
+        ->Pipes are used to transfer data in template without changing actual data present in class 
+        Types : 
+                1. User Define Pipes 
+                2. preDefine Pipes 
+
+
+        preDefine Pipes : 
+        -----------------
+        ->@angular/common library 
+        ->Ex: 
+                1. UpperCasePipe 
+                2. LowerCasePipe
+                3. CurrencyPipe 
+                        Symbols : 
+                                1. INR ->Rupees 
+                                2. USD ->dollar 
+                                3. EUR ->Euros 
+                4. DatePipe
+                        Symbols :
+                                1. full
+                                2. medium
+                                3. short
+                                4. hh ->hours in 1to 12 formate
+                                5. HH->hours in 1to 24 formate
+                                6. mm->minutes
+                                7. ss->seconds
+                                8. M->month
+                                9. dd->date
+                                10. yyyy->year
+                                11. a ->Am/Pm
+
+
+                5. SlicePipe
+                6. JSONPipe
+                7. PercentagePipe
+
+User Define Pipes : 
+---------------------
+        ->Any Pipes which is declared by programmer or user is called User Define Pipes 
+        ->We can achieve Userdefine Pipes by implements PipeTransform interface 
+        ->PipeTransform interface is the preDefine functional interface present in @angular/core 
+        ->PipeTransform interface contains transforms() abstract method
+
+
+Routes : 
+--------
+        ->Routes are used to navigate from one page to another page based on the URL path 
+
+        1. path : 
+        2. component : 
+        3. redirect: 
+        4. children: 
+
+
+
+
+
+Syntax : 
+        app.routes.ts : 
+        --------------
+               const routes:Routes([
+                {
+                        path:"" ,component:"componentName"
+                },
+                {
+                        path:"login" ,component:"componentName"
+                },
+
+               ]) 
+
+               NgModule({
+                imports:[RouterModule.forRoot(routes)],
+                exports:[RouterModule]
+               })
+
+
+
+
+
+
+
+        Types of Routes : 
+        Basic Routes/ Static Routes: 
+        -----------------------------
+                http://localhost:4200/home 
+        ID Routes/ Dynamic Routes: 
+        -----------------------------
+                http://localhost:4200/user:1
+                http://localhost:4200/user:2
+                http://localhost:4200/user:3
+
+
+                Syntax 
+                        const routes:Routes =[
+
+                                { path:"product/:id  ,component:ComponentName }
+                        ]
+
+        Passing One component : 
+-----------------------------------
+        ->Angular we can pass/transfer data in 2 ways 
+                1. parent to child component 
+                2. child to parent component 
+
+        ->Here we have to transfer data one component to another 
+                @Input() ->this is used to receive data from parent component in child components
+                @Output()-> this is used to transfer data in Child component to parent component
+
+        ->In React if we pass data from  one component to another component there we need use Props 
+
+
+
+
+
+
+
+
+
+
+                http://localhost:4200/user/edit
+
+
+        Wildcard: 
+        ----------
+
+
+        Data Transaction  between Components:
+                1. Parent component/Container to Child component  
+                        ->@Input() 
+                2. Child component to Parent component 
+                        ->@OutPut() + EventEmitter ->emit()
+
+Forms In angular : 
+-------------------
+        ->Forms are used to collection the user information digitally
+        ->There 2 types of forms in angular 
+                1. Template Forms : 
+                -------------------
+                ->In Template forms all logic present template(html page)
+                ->To achieve template forms here need to import FormsModule
+                 1. ngform 
+                 2. ngSubmit 
+                 3. ngModule ->property binding / attribute
+              
+
+
+                
+
+                2. Reactive Forms 
+                
+                        Reactive Form Custom Validators
+                                        1. ValidationError 
+                                        2. ValidatorFn
+
+
+
+
+
+                                
+Components : : 
+---------------
+ng g c Component-name / 
+ng generate component Component-name / 
+ng generate c Component-name / 
+
+
+.ts : 
+------
+@Component(){
+
+}
+class Demo{
+
+}
+
+
+Dependency Injection thought service providers in Angular : 
+-------------------------------------------------------------
+        ->ng g s service-name / 
+          ng generate service service-name 
+
+
+          Ex: ng g s service/service-name
+          
+        ->@Injectable() 
+
+
+HTTP Client : 
+-------------
+
+
+
+MongoDB: 
+--------
+->MongoDB used to store data in the form Documents 
+->MongoDB NoSql because this not follow RDBMS 
+->MongoDB follow Horizontal Scaling 
+->In MongoDB There is no joins [ $loopup is there to achieve joins in MongoDB]
+
+
+Database: 
+----------
+->Database is the place there can store Data and manage the Data 
+->In MongoDB To create new Database/ to switch the Database 
+        1. use DatabaseName
+->To Database 
+        2. db.dropDatabase()
+
+Collections (Tables in SQL):
+----------------------------
+        ->Collections group of Documents in MongoDB 
+        ->To Create new Collection
+                1. db.createCollection("collectionName")
+        ->To drop Database 
+                2. db.collectionName.drop() 
+
+
+Document: 
+---------
+        ->Document is the collection of fields in MongoDB
+        ->Data will be store in form of BSON( binary script object notation) 
+        
+        
+        1.Insert 
+        ->To Insert Data / Document 
+                1. db.collectionName.insertOne({})
+                2. db.collectionName.insertMany([{},{},{},{}])
+
+
+SQL: 
+-----
+ create table Staff(id int primary key, name varchar(20) not null , role  varchar(30), salary  int, age int)
+
+
+
+
+        2. Find: 
+        ->find is retrieve Data from collection
+                1.findOne() 
+                        -> used to retrieve one Document at a time
+                        Syntax : 
+                                db.collectionName.findOne() 
+                        i. Filter Condition : 
+                        ---------------------
+                                db.collectionName.find({filter Condition})
+                        ii. Projection : 
+                        ------------------
+                        ->To display fields pass value 1 / true 
+                        ->To no need display fields pass value 0/ false
+                
+                                db.collectionName.find({filter Condition},{projection})
+
+        3. Delete : 
+        ------------
+                -> to delete matched Document we used delete methods 
+                        1. db.collectionName.deleteOne({filter condition})
+                                
+                        2. db.collectionName.deleteMany({filter condition})
+
+        4.Update :
+                ->Update is used to update field values , or insert new fields for existing document 
+                ->If we have want to  insert fields here we need to use $set operator 
+
+                1. updateOne({filter condition}, {updated query})
+                Syntax : 
+                        db.collectionName.updateOne({filter condition} ,{ updated query} )
+
+        
+                In Update Query we have Update operators : 
+                        1.$set 
+                        2.$unset 
+                                ->It us used to remove fields from document in collection 
+                                ->syntax: 
+                                        db.collectionName.updateMany(
+                                                {filter condition},
+                                                {$unset:{removing fields }}
+                                                )
+
+                                1. WAQT remove role fields in all Staff documents who is earning 90000 rs and the name "Ravi" 
+
+                                2.WAQT remove staff id in all Staff documents who is earning more that 80000
+
+                        3.$pop : 
+                                ->$pop operator is used remove array elements
+                                ->if you to remove 0th index elements pass value -1 
+                                ->if you to remove last index elements pass value 1  
+
+                                syntax : 
+                                        db.collectionName.updateMany (
+                                                {filter condition},
+                                                {$pop:{skills:1}}
+                                        )
+                                
+                                        db.collectionName.updateMany (
+                                                {filter condition},
+                                                {$pop:{skills:-1}}
+                                        )
+                                
+                        Datatype's :
+                        ------------
+                                1.number 
+                                2.string
+                                3.boolean 
+                                4.null 
+                                5.Date 
+                                6.Time
+                                7.Array 
+                                8.Object 
+                                9.Function 
+
+
+
+
+
+                        4.$push 
+                                ->$push operator is used add new value to  array 
+                                syntax : 
+                                        db.collectionName.updateMany(
+                                                {filter condition},
+                                                {$push:{skills:"new value"}}
+                                        )
+
+
+
+
+                2. updateMany({filter condition}, {updated query})
+
+                1. DDL ->create , drop , truncate 
+                2. DML ->insert , delete , update ,
+                3. DQL ->select 
+                4. TCL ->rollback , commit
+
+
+
+
+
+
+         Functions In MongoDB : 
+         -----------------------
+                1. skip() 
+                2. limit() 
+                3. sort() 
+                
+
+
+
+
+
+                        

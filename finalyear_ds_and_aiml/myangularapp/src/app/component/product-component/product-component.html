@@ -1,0 +1,29 @@
+<h1>Product Details</h1>
+
+<div class="row m-5">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Ratings</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      @for (product of productData; track product) {
+        <tr>
+            <td>
+                {{product.name}}
+            </td>
+            <td>
+                {{product.price}}
+            </td>
+            <td>
+                {{product.ratings}}
+            </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>

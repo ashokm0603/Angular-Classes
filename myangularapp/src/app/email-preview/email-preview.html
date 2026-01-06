@@ -1,0 +1,19 @@
+<div class="card mt-4">
+  <div class="card-header bg-dark text-white">
+    Job Opportunity Email Preview
+  </div>
+  <div class="card-body">
+    <p>Dear {{ name || "Candidate" }},</p>
+
+    <p>
+      We are excited to offer you a position as
+      <strong>{{ jobTitle || "[Job Title]" }}</strong
+      >. Based on your skills in <strong>{{ skills || "[Skills]" }}</strong
+      >, we believe you are a great fit for this opportunity.
+    </p>
+
+    <p>Looking forward to hearing from you!</p>
+
+    <p>Best regards,<br />Your Company</p>
+  </div>
+</div>

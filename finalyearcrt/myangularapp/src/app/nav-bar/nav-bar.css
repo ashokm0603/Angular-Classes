@@ -1,0 +1,32 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+nav {
+  background-color: palegreen;
+  height: 90px;
+}
+ol {
+  display: flex;
+  justify-content: space-evenly;
+  height: 80px;
+  align-items: center;
+  list-style: none;
+}
+li {
+  background-color: peru;
+  padding: 8px 20px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px black;
+  color: aliceblue;
+  font-weight: bold;
+  font-style: italic;
+}
+
+li:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  color: brown;
+  text-shadow: 2px 2px 1px aliceblue;
+  background-color: rgba(205, 134, 63, 0.708);
+}

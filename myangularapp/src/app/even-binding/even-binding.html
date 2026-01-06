@@ -1,0 +1,27 @@
+<p [ngClass]="{ container: isContainerActive }">even-binding works!</p>
+<button (click)="toggle()">Click here</button>
+<button (mouseover)="listToggle()" (mouseout)="listToggleOut()">
+  Click here to display list
+</button>
+<div [ngClass]="{ 'div-container': isListActive }">
+  <ol>
+    <li>list1</li>
+    <li>list2</li>
+    <li>list3</li>
+    <li>list4</li>
+    <li>list5</li>
+  </ol>
+</div>
+
+<div [ngStyle]="{ 'background-color': color }">
+  <p
+    (scroll)="changeBgColor()"
+    
+  >
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias illo
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate
+    adipisci minima est perferendis dicta explicabo, aut saepe aperiam provident
+    fugit esse obcaecati alias reprehenderit omnis dolore dolorum nihil officia
+    vero.
+  </p>
+</div>

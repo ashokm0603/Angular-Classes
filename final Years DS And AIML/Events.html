@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <label for="">Name :</label>
+      <input type="text" id="name" placeholder="Enter your name" /> <br /><br />
+      <label for="">Password :</label>
+      <input type="password" id="password" placeholder="admin@123" />
+      <br /><br />
+      <label for="">DOB :</label>
+      <input type="date" id="dob" placeholder="Enter your name" />
+      <br /><br />
+      <label for="">State :</label>
+      <select name="" id="">
+        <option value="">choose state</option>
+        <option value="Ap" name="state">Ap</option>
+        <option value="KA" name="state">Ka</option>
+        <option value="Kerala" name="state">Kerala</option>
+        <option value="MA" name="state">MA</option>
+      </select>
+      <br /><br />
+
+      <label for="">Gender :</label>
+      <input type="radio" value="Male" name="gender" /> Male
+      <input type="radio" value="female" name="gender" /> Female <br /><br />
+      <button id="button">Submit</button>
+      <button>Cancel</button>
+    </div>
+
+    <script>
+      let btn = document.getElementById("button");
+      let name = document.getElementById("name");
+      let psw = document.getElementById("password");
+      let dob = document.getElementById("dob");
+      let states = document.getElementsByName("state");
+
+      let gender = document.getElementsByName("gender");
+
+      btn.addEventListener("click", () => {
+        console.log(`Name: ${name.value}`);
+        console.log(`Password :${psw.value}`);
+        console.log(`Date of Birth : ${dob.value}`);
+
+        for (let state of states) {
+          if (state.selected) {
+            console.log(`State : ${state.value}`);
+          }
+        }
+        for (let gen of gender) {
+          if (gen.checked) {
+            console.log(`Gender : ${gen.value}`);
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

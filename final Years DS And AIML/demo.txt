@@ -1,0 +1,274 @@
+operators : 
+------------
+    1. Arithmetic operators (+,-,/,*,% ,**)
+    2. Logical operators    (&&,||,!)
+    3. Assignment operators (=,+=,-=,*=,/=,%=)
+    4. bitwise operators (&,| ,^) 
+    5. shift operators (>>,<<)
+    6. unary operators (++ ,--)
+    7. ternary operators/conditional operators (condition ? true : false)
+    8. comparison operators (== ,=== ,!=)
+
+
+separators : 
+------------
+    EX: () ,{} ,[] ,"" ,'' ,``, , ,. 
+
+
+    Primitive datatype's : 
+    ----------------------
+    1.numbers
+    2.string 
+    3.boolean
+    4.symbol 
+    5.null 
+    6.bigInt 
+    7.undefine
+
+    Non-Primitive Datatype's: 
+    --------------------------
+        1. Arrays 
+        2. Objects 
+        3. Functions
+
+
+Variable : 
+    1. let :can not hoist
+        hoisting means : 
+
+
+        i. variable declaration : ->   Ex:  let  num; 
+        ii.variable initialization ->   Ex : num=10;
+        iii. variable utilization : ->  Ex: console.log(num);
+        iv. reinitialization      :-> num=50; 
+                                      num="java";
+
+
+    2. var : we can  hoist var variables
+
+    3. const : 
+    
+
+
+    Functions : 
+    -----------
+    2. pre define Function : 
+      ----------------------
+      1. log() 
+      2. table() 
+      3. error() 
+      4. warn() 
+      5. info() ..ext  
+
+1. Anonymous Function : 
+    ->Any function doesn't have function name 
+
+
+2. normal Functions or named Function 
+        ->Any functions having function name 
+    i. normal function with parameters
+    ii. normal function with return type 
+
+
+
+3. first class Function 
+        ->any Anonymous function passing a value to variable  thats we called FCF
+
+
+4. functional expression 
+5. immediate invoking function / self calling function 
+    ->warping of Anonymous in to a ()
+    ->This is IIF will get execute only once  
+
+
+
+6. arrow function : 
+    ->When ever we have reduce the syntax of function then we go for arrow function 
+    ->ES 6 (ECMA Script version 6)
+
+->(this keyword will target directly windows object)
+
+7. higher order function : 
+    ->Any function that will accept another as a parameter
+
+
+
+8. callback function 
+9. nested function : 
+    -> Lexical scop 
+    -> Closure 
+10. generator function : 
+    ->
+
+
+Javascript Object : 
+----------------------
+    1. literal way 
+    2. using new keyword / using constructor
+
+
+inbuilt Functions : 
+--------------------
+ 1. keys() 
+ 2. values() 
+ 3. entries()
+ 4. seal () 
+ 5. isSealed() 
+ 6. freeze() 
+    ->freeze() is the pre define inbuilt method/function present in Object class it used to freeze the object 
+    ->Once the object is freezed we can not update / insert / delete is not possible in the freezed object 
+ 7. isFrozen()
+
+
+ Output Methods : 
+ ----------------
+    1.console.log()
+    2.console.error()
+    3.console.warn()
+    4.console.table()
+    5.console.info() 
+
+    6.document.write() 
+    7.document.writeln() 
+    
+    8.conform() 
+    9.alert() 
+
+
+Input Methods : 
+-----------------
+1. prompt()
+
+
+
+Arrays :
+--------
+    ->
+    ->using new keyword / constructor
+
+    inbuilt methods in arrays : 
+    ---------------------------
+
+Strings : 
+---------
+    ->Strings are the non-primitive datatype , mutable in nature 
+    ->We can declare Strings in 3 ways
+        1 . "java" 
+        2.  'java'
+        3.  `java` -> template String , here we can achieve String interpolation
+
+
+        String Inbuilt Methods : 
+        --------------------------
+
+        Date Object : 
+        ------------
+
+
+        Loops in JS : 
+        -------------
+        1. for loop 
+        2. while loop 
+        3. do while loop 
+        4. for-of loop  //used to fetch array values 
+        5. for-in loop  //used to fetch array indexes
+        6. for-each loop //forEach() is the higher order function used to iterate array , here we can retrieve array values , indexes , entire  array 
+
+        For arrays we some more loops 
+            1. Map
+            2. filter 
+            3. reduce
+
+
+given number =9874561235;
+1. WAJSP to print sum of odd number in given number
+2. WAJSP to find sum of numbers "9874561235"
+3. WAJSP to display product of even no's in "9874561235"
+4. WAJSP to count only even numbers in '9874561235'
+5. input :9874561235
+    output1: [975135 , 8462]
+    output2: [30,20]
+    output3: [50]
+
+
+
+
+BOM(Browser object model) : 
+---------------------------
+Windows : 
+----------
+
+DOM (Document object model):
+----------------------------
+    ->Dom is used to manipulate both HTML , CSS 
+    ->by using DOM We can build Dynamic web application
+    ->By using DOM we can fetch data from the server (fetch data from API)
+    ->By using DOM we can send data to server
+
+DOM Methods: 
+------------
+    1. appendChild()
+    2. removeChild() : this is used to remove child element 
+    3. createElement () :this is used to create html element 
+    4. innerText :used to insert text into html element 
+    5. innerHTML  : used to insert html element with text 
+    6. textContent  :used to insert only text to html element 
+
+DOM Selectors : 
+---------------
+    ->DOM Selectors are used to target the HTML Elements 
+    ->Types : 
+        1. getElementById()  : 
+                -> this used to target html Elements based on ID name 
+                ->getElementById will target one single element at a time 
+
+        2. getElementsByClassName() : 
+            ->this used to target html Elements based class name 
+            ->getElementsByClassName will target multiple matched classes at a time 
+            -> the return  of getElementsByClassName is HTMLCollection 
+
+        3. getElementsByTagName() 
+            ->this used to target html Elements based tag name 
+            ->getElementsByTagName will target multiple matched tags at a time 
+            -> the return  of getElementsByTagName is HTMLCollection 
+
+        4. getElementsByName() 
+            ->this used to target html Elements based name  attribute
+            -> the return  of getElementsByName is NodeList 
+            
+
+        5. querySelector() : 
+            ->this used to target html Elements based id, class or tag name 
+            ->querySelector will target only one element at a time 
+            
+
+        6. querySelectorAll() 
+            ->this used to target html Elements based id, class or tag name 
+            ->querySelectorAll will target multiple elements at a time 
+            -> the return  of querySelectorAll is NodeList 
+             
+
+DOM Events : 
+-------------
+    ->We can achieve events in 3 ways 
+        1. attribute way 
+        2. property way 
+        3. addEventListener() 
+
+
+        1. attribute way  : 
+        ----------------------  
+            -> adding dom events using html attributes in static tag 
+
+            i. onclick 
+
+        2. property way 
+        3. addEventListener() 
+
+            ii.key events 
+                keyUp
+                keydown
+                heyPress
+
+
+        fetch() 

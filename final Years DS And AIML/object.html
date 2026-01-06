@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //object declaration using literal way
+
+      //   let empDetails = {
+      //     name: "ravi",
+      //     role: "Developer",
+      //     salary: 1000,
+      //     skills: ["html", "css", "Js", "Ts", "Node", "Angular"],
+      //     active: true,
+      //     Address: {
+      //       city: "Guntur",
+      //       pinCode: 561207,
+      //     },
+      //     fun: function () {
+      //       console.log("This is function in object");
+      //     },
+      //   };
+
+      //   console.log(empDetails.name);
+      //   console.log(empDetails.Address.city);
+      //   console.log(empDetails.skills[1]);
+      //   empDetails.fun();
+
+      //   let stdDetails = {
+      //     name: "raju",
+      //     rollNo: 1001,
+      //     fee: 50000,
+      //     course: "B.Tech",
+      //     skills: ["power BI developer", "dev oops"],
+      //   };
+
+      //console.log(Object.keys(stdDetails)); //keys() is used to get all keys in object in array format
+      // console.log(Object.values(stdDetails)); //values() is used to get all values in object in array format
+      // console.log(Object.entries(stdDetails)); //entries() is used to display both values & key in array format
+
+      // console.log(stdDetails);
+      // console.log(stdDetails.name);
+      // console.log(stdDetails.rollNo);
+      // console.log(stdDetails.fee);
+      // console.log(stdDetails.course);
+
+      //update object key and values
+      //     stdDetails.name = "Rani";
+      //     stdDetails.Address = { city: "Tenali", zipCode: 202560 };
+
+      //     stdDetails.skills[0] = "Java Full Stack Developer";
+      //     console.log(stdDetails);
+      //   Delete object key values :
+      //     delete stdDetails.name;
+      //     delete stdDetails.skills;
+      //     console.log(stdDetails);
+
+      //   let customerProductDetails = {
+      //     cstName: "Ravi",
+      //     cstId: 100,
+      //     pdtPrice: 5000,
+      //     pdtName: "Laptop",
+      //     pdtId: "Pd100",
+      //     orderId: "or100",
+      //     orderDate: new Date(),
+      //     address: {
+      //       address1: "603 ,RK Residence ,tenali",
+      //       state: "Ap",
+      //       zipCode: 200560,
+      //     },
+      //   };
+
+      //   console.log(customerProductDetails);
+      let empDetails = {
+        name: "ravi",
+        role: "Developer",
+        salary: 100000,
+      };
+      Object.freeze(empDetails);
+      console.log(Object.isFrozen(empDetails));
+      empDetails.name = "Raghu"; //update not possible
+      delete empDetails.name; //delete not possible
+      empDetails.address = "Guntur"; //insert not possible
+      console.log(empDetails);
+
+
+
+      
+      //   Object.seal(obj);
+      //   console.log(obj);
+      //   console.log(Object.isSealed(obj));
+      //   delete obj.name; //delete not possible in sealed object
+      //   obj.name = "Anusha";
+      //   obj.course = "B.Tech"; //insertion not possible in sealed object
+      //   console.log(obj);
+    </script>
+  </body>
+</html>

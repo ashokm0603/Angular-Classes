@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let date = new Date();
+      let days = ["sun", "mon", "tue", "wed", "the", "fri", "sat"];
+      document.writeln(`<h4><u>Full Date:</u> ${date} </h4>`);
+      document.writeln(`<h4><u>Day:</u> ${days[date.getDay()]} </h4>`);
+      document.writeln(`<h4><u>Year:</u> ${date.getFullYear()} </h4>`);
+      document.writeln(`<h4><u>Hours:</u> ${date.getHours()} </h4>`);
+      document.writeln(`<h4><u>Mints:</u> ${date.getMinutes()} </h4>`);
+      document.writeln(`<h4><u>Mints:</u> ${date.toDateString()} </h4>`);
+      document.writeln(`<h4><u>Mints:</u> ${date.toISOString()} </h4>`);
+    </script>
+  </body>
+</html>

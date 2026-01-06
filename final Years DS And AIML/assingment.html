@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let ProductPrices = [100, 300, 500, 8000, 9000, 4050, 950];
+      console.log(ProductPrices);
+
+      let discountPrices = ProductPrices.map((x) => {
+        return x - (10 / x) * 100;
+      });
+      console.log(discountPrices);
+
+      let filteredProducts = discountPrices.filter((x) => {
+        return x > 500 && x < 5000;
+      });
+      console.log(filteredProducts);
+
+      let totalProductPrices = ProductPrices.reduce((val, acc) => {
+        return val + acc;
+      }, 500);
+      console.log(totalProductPrices);
+    </script>
+  </body>
+</html>

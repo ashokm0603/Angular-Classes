@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      for (i = 90; i > 80; ) {
+        document.write(`<h4> ${i} </h4>`);
+        i--;
+      }
+      //Example for while loop
+      let num = 585;
+      let count = 0;
+      while (num != 0) {
+        let rem = Math.floor(num % 10);
+        count++;
+        num = Math.floor(num / 10);
+      }
+      document.write(`<h4> Count of digits :${count} </h4>`);
+    </script>
+  </body>
+</html>

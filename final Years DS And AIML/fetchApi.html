@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      img {
+        height: 250px;
+        width: 200px;
+        border-radius: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      let body = document.querySelector("body");
+      fetch("https://api.github.com/users")
+        .then((res) => res.json())
+        .then((data) => {
+          for (let personDetails of data) {
+            let heading = document.createElement("h1");
+            let image = document.createElement("img");
+            console.log(personDetails);
+
+            heading.innerText = `name : ${personDetails.login}`;
+            image.src = personDetails.avatar_url;
+            body.appendChild(heading);
+            body.appendChild(image);
+          }
+        })
+        .catch((err) => console.log());
+    </script>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="para">Lorem ipsum dolor sit</p>
+    <p>Lorem ipsum dolor sit</p>
+    <script>
+      let a = document.querySelector("body");
+      let p = document.getElementById("para");
+      p.style.color = "magenta";
+      let heading = document.createElement("h1");
+      heading.innerText = "This is heading";
+      a.appendChild(heading);
+      heading.style.color = "red";
+      heading.style.textAlign = "center";
+      heading.style.backgroundColor = "powderblue";
+      let table = document.createElement("table");
+      let row1 = document.createElement("tr");
+      let row2 = document.createElement("tr");
+      let col1 = document.createElement("th");
+      let col2 = document.createElement("th");
+      let col3 = document.createElement("th");
+      let col4 = document.createElement("td");
+      let col5 = document.createElement("td");
+      let col6 = document.createElement("td");
+      col1.innerText = "col-1";
+      col2.innerText = "col-2";
+      col3.innerText = "col-3";
+      col4.innerText = "col-4";
+      col5.innerText = "col-5";
+      col6.innerText = "col-6";
+      table.appendChild(row1);
+      table.appendChild(row2);
+      row1.appendChild(col1);
+      row1.appendChild(col2);
+      row1.appendChild(col3);
+      row2.appendChild(col4);
+      row2.appendChild(col5);
+      row2.appendChild(col6);
+      table.border = "5";
+      table.cellPadding = "10";
+      table.cellSpacing = "0";
+      a.appendChild(table);
+      c;
+    </script>
+  </body>
+</html>

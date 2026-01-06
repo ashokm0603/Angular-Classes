@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input
+      id="filterInput"
+      type="text"
+      placeholder="Enter emp names to filter"
+    />
+    <br /><br />
+    <table border="1" cellspacing="0" cellpadding="10">
+      <thead>
+        <tr>
+          <th>SlNo</th>
+          <th>Name</th>
+          <th>Role</th>
+          <th>Salary</th>
+          <th>Address</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Ravi</td>
+          <td>Developer</td>
+          <td>50000</td>
+          <td>Tenali</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Rani</td>
+          <td>Developer</td>
+          <td>40000</td>
+          <td>Bangalore</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Sai</td>
+          <td>Data analyst</td>
+          <td>90000</td>
+          <td>Bangalore</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script>
+      let inputValue = document.getElementById("filterInput");
+      inputValue.addEventListener("keyup", () => {
+        let values = inputValue.value.toLowerCase();
+        let rows = document.querySelectorAll("tbody tr");
+        for (let row of rows) {
+          let tableValues = row.textContent;
+          row.style.display = tableValues.toLowerCase().includes(values)
+            ? ""
+            : "none";
+        }
+      });
+    </script>
+  </body>
+</html>
